@@ -1,3 +1,3 @@
 export default function Categories() {
-  return <>Categories</>;
+  return <><button type="button">Check status</button></>;
 }
