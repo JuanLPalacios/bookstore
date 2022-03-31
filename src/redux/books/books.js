@@ -1,23 +1,23 @@
-export const ADD_BOOK = 'ADD_BOOK';
-export const DELETE_BOOK = 'DELETE_BOOK';
-export default (state = {}, action) => {
+const ADD = 'bookstore/books/ADD';
+const REMOVE = 'bookstore/books/REMOVE';
+export default function reducer(state = [], action = {}) {
   switch (action.type) {
-    case ADD_BOOK: {
-      return {
-        ...state,
-        books: action.error
-          ? null
-          : (state.books || []).concat([action.payload.comment]),
-      };
+    case ADD: {
+      return (state || []).concat([action.book]);
     }
-    case DELETE_BOOK: {
+    case REMOVE: {
       const { bookId } = action;
-      return {
-        ...state,
-        books: state.books.filter((book) => book.id !== bookId),
-      };
+      return state.filter((book) => book.id !== bookId);
     }
     default:
       return state;
   }
-};
+}
+
+export function addBook(book) {
+  return { type: ADD, book };
+}
+
+export function deleteBook(bookId) {
+  return { type: REMOVE, bookId };
+}
