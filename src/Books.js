@@ -1,10 +1,9 @@
-import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import Book from './components/Book';
 import BookInput from './components/BookInput';
 
 export default function Books() {
-  // eslint-disable-next-line no-unused-vars
-  const [list, setList] = useState([]);
+  const list = useSelector((state) => state.books);
   return (
     <div className="Books">
       <ul>
