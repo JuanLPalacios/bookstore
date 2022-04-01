@@ -1,3 +1,7 @@
+import { useDispatch } from 'react-redux';
+import { checkCargory } from './redux/categories/categories';
+
 export default function Categories() {
-  return <><button type="button">Check status</button></>;
+  const dispatch = useDispatch();
+  return <><button type="button" onClick={dispatch(checkCargory())}>Check status</button></>;
 }
