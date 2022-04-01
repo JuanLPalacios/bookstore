@@ -8,7 +8,7 @@ const defaultBooks = [
     category: 'Fiction',
   },
   {
-    item_id: 'item12',
+    item_id: 'item2',
     title: 'Logicomix',
     author: 'Apostolos Doxiadis, Christos Papadimitriou',
     category: 'Non-fiction',
@@ -21,7 +21,7 @@ export default function reducer(state = defaultBooks, action = {}) {
     }
     case REMOVE: {
       const { bookId } = action;
-      return state.filter((book) => book.id !== bookId);
+      return state.filter((book) => book.item_id !== bookId);
     }
     default:
       return state;
