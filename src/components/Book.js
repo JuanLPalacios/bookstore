@@ -1,6 +1,9 @@
+import PropTypes from 'prop-types';
+
 export default function Book(props) {
-  // eslint-disable-next-line object-curly-newline, react/prop-types
-  const { key, title, author, onDelete } = props;
+  const {
+    key, title, author, onDelete,
+  } = props;
   return (
     <li>
       <h4>{title}</h4>
@@ -9,3 +12,10 @@ export default function Book(props) {
     </li>
   );
 }
+
+Book.propTypes = {
+  key: PropTypes.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  onDelete: PropTypes.func.isRequired,
+};
