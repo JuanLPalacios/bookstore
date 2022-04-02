@@ -216,6 +216,12 @@
   flex-direction: column;
 }
 
+.BookInput hr {
+  border: none;
+  background: var(--grey-border);
+  height: 1px;
+}
+
 .BookInput .Title {
   height: 1.5rem;
   margin: 1.813rem 0 1.188rem 0;
