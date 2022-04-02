@@ -1,7 +1,7 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 export default function BookInput(props) {
-  // eslint-disable-next-line object-curly-newline, react/prop-types
   const { onCreate } = props;
   const [newBook, setNewBook] = useState({ title: '', author: '', category: '' });
   const onSubmit = (e) => {
@@ -12,7 +12,6 @@ export default function BookInput(props) {
   const onChange = (e) => {
     const temp = { ...newBook };
     temp[e.target.name] = e.target.value;
-    console.log(temp);
     setNewBook(temp);
   };
   const { author, title } = newBook;
@@ -24,3 +23,7 @@ export default function BookInput(props) {
     </form>
   );
 }
+
+BookInput.propTypes = {
+  onCreate: PropTypes.func.isRequired,
+};
