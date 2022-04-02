@@ -16,11 +16,16 @@ export default function BookInput(props) {
   };
   const { author, title } = newBook;
   return (
-    <form className="BookInput" onSubmit={onSubmit}>
-      <input type="text" name="title" placeholder="title" onChange={onChange} value={title} />
-      <input type="text" name="author" placeholder="author" onChange={onChange} value={author} />
-      <button type="submit">Create</button>
-    </form>
+    <div className="BookInput">
+      <span className="Title">
+        ADD NEW BOOK
+      </span>
+      <form className="book-form" onSubmit={onSubmit}>
+        <input className="title" type="text" name="title" placeholder="title" onChange={onChange} value={title} />
+        <input className="category" type="text" name="author" placeholder="author" onChange={onChange} value={author} />
+        <button className="create-btn" type="submit">ADD BOOK</button>
+      </form>
+    </div>
   );
 }
 
