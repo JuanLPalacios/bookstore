@@ -1,3 +1,4 @@
+import './Books.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Book from './components/Book';
@@ -17,16 +18,16 @@ export default function Books() {
   );
   return (
     <div className="Books">
-      <ul>
-        {list.map((book) => (
-          <Book
-            key={book.item_id}
-            title={book.title}
-            author={book.author}
-            onDelete={() => { dispatch(deleteBook(book.item_id)); }}
-          />
-        ))}
-      </ul>
+      {list.map((book) => (
+        <Book
+          key={book.item_id}
+          title={book.title}
+          author={book.author}
+          category={book.category}
+          onDelete={() => { dispatch(deleteBook(book.item_id)); }}
+        />
+      ))}
+      <hr />
       <BookInput onCreate={(book) => { dispatch(addBook({ ...book, item_id: uid() })); }} />
     </div>
   );
