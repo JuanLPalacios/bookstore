@@ -28,6 +28,7 @@
 .Lesson-Panel > div:nth-child(2) {
   align-items: center;
   flex-direction: row;
+  border-right: solid 1px var(--grey-border);
 }
 
 .School-of {
