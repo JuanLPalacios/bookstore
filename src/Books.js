@@ -1,17 +1,20 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Book from './components/Book';
 import BookInput from './components/BookInput';
-import { addBook, deleteBook } from './redux/books/books';
+import { addBook, deleteBook, getBooks } from './redux/books/books';
 
-let count = 3;
-const uid = () => {
-  count += 1;
-  return `item${count}`;
-};
+const uid = () => Date.now();
 
 export default function Books() {
   const list = useSelector((state) => state.books);
   const dispatch = useDispatch();
+  useEffect(
+    () => {
+      dispatch(getBooks());
+    },
+    [],
+  );
   return (
     <div className="Books">
       <ul>
