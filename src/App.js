@@ -8,7 +8,7 @@ import NavBar from './NavBar';
 
 function App() {
   return (
-    <div className="panel-bg">
+    <div className="App">
       <Provider store={store}>
         <NavBar />
         <Routes>

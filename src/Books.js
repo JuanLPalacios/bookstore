@@ -1,3 +1,4 @@
+import './Books.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Book from './components/Book';
@@ -23,6 +24,7 @@ export default function Books() {
             key={book.item_id}
             title={book.title}
             author={book.author}
+            category={book.category}
             onDelete={() => { dispatch(deleteBook(book.item_id)); }}
           />
         ))}
